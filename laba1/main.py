@@ -35,8 +35,8 @@ def calculate_final_statistics(results):
     
     all_results = pd.concat(results, ignore_index=True)
     final_stats = all_results.groupby('Категория')['median'].agg([
-        ('медиана_медиан', 'median'),
-        ('стандартное_отклонение_медиан', 'std')
+        ('Median of medians', 'median'),
+        ('Standard deviation of medians', 'std')
     ]).reset_index()
     
     return final_stats
